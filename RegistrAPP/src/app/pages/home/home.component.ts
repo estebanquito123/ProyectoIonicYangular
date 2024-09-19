@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { DatosAlumnoService } from './../../servicios/datos-alumno.service';
+import { Component, inject, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-home',
@@ -6,12 +7,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent  implements OnInit {
+  nombre: string;
 
-  constructor() { }
+  DatosAlumno= inject(DatosAlumnoService)
+  constructor() {
+    this.nombre= this.DatosAlumno.getNombre();
+   }
 
-  ngOnInit() {}
-  saludame() {
-    console.log('Hola');
+  ngOnInit() {
   }
+
 
 }

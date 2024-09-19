@@ -7,6 +7,7 @@ import { LoginComponent } from './login/login.component';
 import { LogoutComponent } from './logout/logout.component';
 import { SharedModule } from '../shared/shared.module';
 import { IonicModule } from '@ionic/angular';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { IonicModule } from '@ionic/angular';
     CommonModule,
     PagesRoutingModule,
     SharedModule,
-    IonicModule
+    IonicModule,
+    FormsModule
   ]
 })
 export class PagesModule { }
