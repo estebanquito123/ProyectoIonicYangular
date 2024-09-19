@@ -5,6 +5,8 @@ import { PagesRoutingModule } from './pages-routing.module';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { LogoutComponent } from './logout/logout.component';
+import { SharedModule } from '../shared/shared.module';
+import { IonicModule } from '@ionic/angular';
 
 
 @NgModule({
@@ -15,7 +17,9 @@ import { LogoutComponent } from './logout/logout.component';
   ],
   imports: [
     CommonModule,
-    PagesRoutingModule
+    PagesRoutingModule,
+    SharedModule,
+    IonicModule
   ]
 })
 export class PagesModule { }

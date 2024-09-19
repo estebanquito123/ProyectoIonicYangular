@@ -10,5 +10,8 @@ export class HomeComponent  implements OnInit {
   constructor() { }
 
   ngOnInit() {}
+  saludame() {
+    console.log('Hola');
+  }
 
 }
