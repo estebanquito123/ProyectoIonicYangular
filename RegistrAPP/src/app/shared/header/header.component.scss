@@ -1,4 +1,21 @@
 ion-header {
-    --background: #3344ff; /* Cambia el color de fondo a un color específico */
+  background-color: #333; /* Color de fondo oscuro, igual que el footer */
+  color: #ffcc00; /* Color de texto amarillo */
 }
+
+ion-toolbar {
+  --background: #333; /* Color de fondo oscuro */
+  --color: #ffcc00; /* Texto en color amarillo */
+  padding: 10px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Sombra para efecto de profundidad */
+}
+
+ion-title {
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center; /* Centramos el título */
+  color: #ffcc00; /* Color del texto en amarillo */
+}
+
+
 

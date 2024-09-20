@@ -1,0 +1,54 @@
+ion-content {
+  --background: #f0f0f0; /* Fondo gris claro para todo el contenido */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Centrar verticalmente */
+  align-items: center; /* Centrar horizontalmente */
+  height: 100vh; /* Asegura que ocupe toda la altura de la vista */
+  padding: 0 20px; /* Espaciado lateral */
+}
+
+form {
+  background-color: white; /* Fondo blanco para el formulario */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+  width: 100%;
+  max-width: 400px; /* Ancho máximo del formulario */
+  margin: 0 auto; /* Centra el formulario horizontalmente */
+}
+
+ion-item {
+  margin-bottom: 15px;
+}
+
+ion-title {
+  text-align: center; /* Centra el título */
+  font-size: 24px; /* Tamaño del texto del título */
+  margin-bottom: 15px; /* Espaciado debajo del título */
+}
+
+ion-button {
+  --background: #2207ad; /* Color del botón coherente con el header */
+  margin-top: 10px;
+}
+
+p {
+  text-align: center;
+}
+
+p a {
+  color: #1c0ee5; /* Color del enlace coherente con el color del botón y el header */
+  text-decoration: none;
+}
+
+p a:hover {
+  text-decoration: underline;
+}
+
+p[style] {
+  margin-top: 10px;
+}
+
+
+

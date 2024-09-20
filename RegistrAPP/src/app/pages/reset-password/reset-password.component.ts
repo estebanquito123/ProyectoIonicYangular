@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { AuthService } from 'src/app/servicios/auth.service';  // Ajusta la ruta según tu proyecto
 
 @Component({
   selector: 'app-reset-password',
@@ -7,13 +8,16 @@ import { Router } from '@angular/router';
   styleUrls: ['./reset-password.component.scss']
 })
 export class ResetPasswordComponent {
-  email: string = '';
+  username: string = '';  // Variable para el nombre de usuario
+  errorMessage: string = '';  // Para mostrar errores
 
-  constructor(private router: Router) {}
+  constructor(private authService: AuthService, private router: Router) {}
 
-  resetPassword() {
-    alert('Se ha enviado un enlace para restablecer tu contraseña (simulado).');
-    this.router.navigate(['/login']); // Redirige de vuelta al login
+  onSubmit() {
+    if (this.authService.isUserValid(this.username)) {  // Comprueba si el usuario es válido
+      this.router.navigate(['/login']);  // Redirige a la página de login si el usuario existe
+    } else {
+      this.errorMessage = 'Usuario no encontrado';  // Muestra mensaje de error si no se encuentra
+    }
   }
 }
-

@@ -2,6 +2,7 @@
 <ion-content>
   <form (submit)="login()">
     <ion-item>
+      <ion-title>Iniciar Sesion</ion-title>
       <ion-label position="floating">Nombre de Usuario</ion-label>
       <ion-input [(ngModel)]="username" name="username" required></ion-input>
     </ion-item>
@@ -17,6 +18,6 @@
 
     <p><a [routerLink]="['resetPassword']" >¿Olvidaste tu contraseña? Haz click aqui</a></p>
   </form>
-  <app-footer></app-footer>
 </ion-content>
+<app-footer></app-footer>
 

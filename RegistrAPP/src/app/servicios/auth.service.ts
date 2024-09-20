@@ -31,5 +31,9 @@ export class AuthService {
   getLoggedInUser() {
     return JSON.parse(localStorage.getItem('loggedInUser')!);
   }
+  isUserValid(username: string): boolean {
+    return this.USERS.some(user => user.username === username);
+  }
 }
+
 
