@@ -1,25 +1,25 @@
-import { Component, inject, OnInit } from '@angular/core';
-import { DatosAlumnoService } from 'src/app/servicios/datos-alumno.service';
+import { Component } from '@angular/core';
+import { AuthService } from 'src/app/servicios/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss'],
+  styleUrls: ['./login.component.scss']
 })
-export class LoginComponent  implements OnInit {
-  nombre: string;
+export class LoginComponent {
+  username: string = '';
+  password: string = '';
+  loginError: boolean = false;
 
-  DatosAlumno= inject(DatosAlumnoService)
-  constructor() { }
+  constructor(private authService: AuthService, private router: Router) {}
 
-  ngOnInit() {}
-
-  saludame() {
-    console.log('Hola'+ this.nombre);
-  }
-
-  guardarNombre() {
-    this.DatosAlumno.setNombre(this.nombre)
-    console.log('Nombre guardado:' + this.nombre);
+  login() {
+    const isLoggedIn = this.authService.login(this.username, this.password);
+    if (isLoggedIn) {
+      this.router.navigate(['/home']); // Navega a la página de inicio o componente protegido
+    } else {
+      this.loginError = true; // Muestra un mensaje de error si las credenciales son incorrectas
+    }
   }
 }

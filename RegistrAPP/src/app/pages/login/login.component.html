@@ -1,10 +1,22 @@
+<app-header></app-header>
 <ion-content>
-  <app-header></app-header>
-  <ion-item>
-    <p> Ingrese sus credenciales<p>
-    <ion-label position="floating">Nombre</ion-label>
-    <ion-input [(ngModel)]="nombre"></ion-input>
-  </ion-item>
-  <ion-button (click)="guardarNombre()">Ingresar</ion-button>
+  <form (submit)="login()">
+    <ion-item>
+      <ion-label position="floating">Nombre de Usuario</ion-label>
+      <ion-input [(ngModel)]="username" name="username" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Contraseña</ion-label>
+      <ion-input [(ngModel)]="password" name="password" type="password" required></ion-input>
+    </ion-item>
+
+    <ion-button expand="full" type="submit">Iniciar Sesión</ion-button>
+
+    <p *ngIf="loginError" style="color: red;">Nombre de usuario o contraseña incorrectos.</p>
+
+    <p><a [routerLink]="['resetPassword']" >¿Olvidaste tu contraseña? Haz click aqui</a></p>
+  </form>
   <app-footer></app-footer>
-  </ion-content>
+</ion-content>
+
