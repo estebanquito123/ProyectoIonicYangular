@@ -1,22 +1,27 @@
 <app-header></app-header>
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Iniciar Sesión</ion-title>
+  </ion-toolbar>
+</ion-header>
+
 <ion-content>
-  <form (submit)="login()">
+  <form (ngSubmit)="onLogin()">
     <ion-item>
-      <ion-title>Iniciar Sesion</ion-title>
-      <ion-label position="floating">Nombre de Usuario</ion-label>
-      <ion-input [(ngModel)]="username" name="username" required></ion-input>
+      <ion-label position="floating">Usuario</ion-label>
+      <ion-input type="text" [(ngModel)]="username" name="username" required></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label position="floating">Contraseña</ion-label>
-      <ion-input [(ngModel)]="password" name="password" type="password" required></ion-input>
+      <ion-input type="password" [(ngModel)]="password" name="password" required></ion-input>
     </ion-item>
 
     <ion-button expand="full" type="submit">Iniciar Sesión</ion-button>
 
-    <p *ngIf="loginError" style="color: red;">Nombre de usuario o contraseña incorrectos.</p>
+    <ion-button expand="full" color="medium" (click)="onForgotPassword()">Restablecer Contraseña</ion-button>
 
-    <p><a [routerLink]="['resetPassword']" >¿Olvidaste tu contraseña? Haz click aqui</a></p>
+    <ion-text color="danger" *ngIf="loginError">{{ loginError }}</ion-text>
   </form>
 </ion-content>
 <app-footer></app-footer>

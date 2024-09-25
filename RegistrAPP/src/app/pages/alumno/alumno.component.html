@@ -1,0 +1,18 @@
+<app-header></app-header>
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Asignaturas del Alumno</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-title>Bienvenido, {{ alumnoNombre }}</ion-title>
+
+  <ion-list>
+    <ion-item *ngFor="let asignatura of asignaturas" (click)="verDetalle(asignatura)">
+      {{ asignatura }}
+    </ion-item>
+  </ion-list>
+</ion-content>
+<app-footer></app-footer>
+
