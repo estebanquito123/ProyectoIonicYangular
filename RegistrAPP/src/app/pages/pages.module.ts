@@ -8,8 +8,8 @@ import { LogoutComponent } from './logout/logout.component';
 import { SharedModule } from '../shared/shared.module';
 import { IonicModule } from '@ionic/angular';
 import { FormsModule } from '@angular/forms';
-import { DocenteComponent } from './docente/docente.component';
-import { AlumnoComponent } from './alumno/alumno.component';
+import { DetalleAsignaturaComponent } from './detalles-asignatura/detalles-asignatura.component';
+
 
 
 @NgModule({
@@ -17,8 +17,7 @@ import { AlumnoComponent } from './alumno/alumno.component';
     HomeComponent,
     LoginComponent,
     LogoutComponent,
-    DocenteComponent,
-    AlumnoComponent
+    DetalleAsignaturaComponent
   ],
   imports: [
     CommonModule,

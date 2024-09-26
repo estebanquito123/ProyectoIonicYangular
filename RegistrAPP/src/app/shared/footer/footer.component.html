@@ -1,8 +1,6 @@
 <div class="pie">
   <h1>Pie de pagina</h1>
   <p><a [routerLink]="['/']" >Home</a></p>
-  <p><a [routerLink]="[ '/docente']"> Home Docente</a></p>
-  <p><a [routerLink]="[ '/alumno']"> Home Alumno</a></p>
   <p><a *ngIf="!authService.isLoggedIn()" [routerLink]="['/login']" >Login</a></p>
   <p><a *ngIf="authService.isLoggedIn()" routerLink="/logout">Logout</a></p>
 </div>

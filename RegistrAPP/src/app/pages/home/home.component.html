@@ -1,3 +1,36 @@
-<p>
-  home works!
-</p>
+<app-header></app-header>
+<div class="container">
+  <h1>Bienvenido, {{ userNombre }}</h1>
+
+  <div *ngIf="userRole === 'docente'">
+    <h2>Asignaturas que enseñas</h2>
+    <ul>
+      <li *ngFor="let asignatura of asignaturas">
+        {{ asignatura }}
+        <!-- Botón para ver detalles de la asignatura -->
+        <button (click)="verDetalle(asignatura)">Ver Detalles</button>
+        <!-- Botón para generar un código QR (solo visible para docentes) -->
+        <button (click)="generarQR(asignatura)">Generar Código QR</button>
+      </li>
+    </ul>
+  </div>
+
+  <div *ngIf="userRole === 'alumno'">
+    <h2>Asignaturas en las que estás inscrito</h2>
+    <ul>
+      <li *ngFor="let asignatura of asignaturas">
+        {{ asignatura }}
+        <!-- Botón para ver detalles de la asignatura -->
+        <button (click)="verDetalle(asignatura)">Ver Detalles</button>
+        <!-- Botón para escanear un código QR (solo visible para alumnos) -->
+
+      </li>
+    </ul>
+  </div>
+
+  <div *ngIf="!userRole">
+    <p>Error: No se pudo determinar el rol del usuario.</p>
+  </div>
+</div>
+<app-footer></app-footer>
+
