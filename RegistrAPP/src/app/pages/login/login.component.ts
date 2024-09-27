@@ -21,9 +21,9 @@ export class LoginComponent {
       const userRole = this.authService.getUserRole();
 
       if (userRole === 'docente') {
-        this.router.navigate(['/']);
+        this.router.navigate(['/docente']);
       } else if (userRole === 'alumno') {
-        this.router.navigate(['/']);
+        this.router.navigate(['/alumno']);
       }
     } else {
       this.loginError = 'Usuario o contraseña incorrectos';
