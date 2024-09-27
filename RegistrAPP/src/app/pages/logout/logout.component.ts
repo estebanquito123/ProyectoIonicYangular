@@ -1,23 +1,25 @@
-import { Component } from '@angular/core';
-import { AuthService } from 'src/app/servicios/auth.service';
 import { Router } from '@angular/router';
+import { Component, inject, OnInit } from '@angular/core';
+import { AuthService } from 'src/app/servicios/auth.service';
 
 @Component({
   selector: 'app-logout',
   templateUrl: './logout.component.html',
-  styleUrls: ['./logout.component.scss']
+  styleUrls: ['./logout.component.scss'],
 })
-export class LogoutComponent {
+export class LogoutComponent  implements OnInit {
 
-  constructor(private authService: AuthService, private router: Router) {}
+  private authService = inject(AuthService);
+  private router= inject(Router)  // Inyecta el servicio de autenticación
 
-  ngOnInit() {
-    this.logout();  // Llama a la función de logout al iniciar el componente
+  constructor() {}
+
+  ngOnInit(): void {
+    this.authService.logout();  // Cierra la sesión
+    this.router.navigate(['/login']); // Redirige al usuario a la página de login
   }
 
-  logout() {
-    this.authService.logout();  // Llama al método logout del servicio
-    this.router.navigate(['/login']);  // Redirige al login
-  }
 }
+
+
 
