@@ -1,7 +1,14 @@
-<ion-content>
-  <app-header></app-header>
-  <ion-label>
-    Bienvenido
-  </ion-label>
-  <app-footer></app-footer>
-  </ion-content>
+<app-header></app-header>
+<div>
+  <h1>Bienvenido, {{ nombreUsuario }}</h1>
+
+  <!-- Mostrar las asignaturas del usuario -->
+  <h2>Tus asignaturas ({{ rolUsuario }}):</h2>
+  <ul>
+    <li *ngFor="let asignatura of asignaturas">
+      <button (click)="verDetalles(asignatura)">{{ asignatura.nombre }}</button>
+    </li>
+  </ul>
+</div>
+<app-footer></app-footer>
+

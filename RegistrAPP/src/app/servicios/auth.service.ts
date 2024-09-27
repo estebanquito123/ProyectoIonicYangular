@@ -19,6 +19,9 @@ export class AuthService {
   // Agregar un BehaviorSubject para el estado de loginFailed
   private loginFailedSubject = new BehaviorSubject<boolean>(false); // Para mostrar si falló la autenticación
   loginFailed$ = this.loginFailedSubject.asObservable(); // Para mostrar si falló la autenticación
+
+  private rolSubject = new BehaviorSubject<string>('');
+  rol$ = this.rolSubject.asObservable(); // Observable para el rol
   buscarBD2(usuario: string, clave: string): void { // Simulación de la autenticación con base en datos fijas
     const usuarioEncontrado = usuariosSimulados.find( // Buscar un usuario en la lista de usuarios simulados
       u => u.usuario === usuario && u.clave === clave // Revisar si el usuario y la clave coinciden con los datos de un usuario
@@ -26,6 +29,7 @@ export class AuthService {
     if (usuarioEncontrado) { // Si el usuario y la clave coinciden con los datos de un usuario, activar
       this.isAuthenticatedSubject.next(true); // Activar el estado de autenticación si la autenticación es correcta.
       this.usuarioSubject.next(usuarioEncontrado.nombreCompleto); // Actualizar el nombre completo del usuario autenticado.
+      this.rolSubject.next(usuarioEncontrado.rol);
       this.loginFailedSubject.next(false);  // Restablecer loginFailed a false
     } else {
       this.isAuthenticatedSubject.next(false); // Desactivar el estado de autenticación si la autenticación es incorrecta.

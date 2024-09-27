@@ -11,17 +11,21 @@ export const usuariosSimulados: Usuario[] = [
       {
         nombre: "Matemáticas",
         contenido: "Álgebra y geometría",
-        fecha: new Date('2024-09-30T10:00:00')
+        fecha: new Date('2024-09-30T10:00:00'),
+        hora: "10:00"
       },
       {
         nombre: "Historia",
         contenido: "Revolución Francesa",
-        fecha: new Date('2024-10-01T14:00:00')
+        fecha: new Date('2024-10-01T14:00:00'),
+        hora: "10:00"
+
       },
       {
         nombre: "Física",
         contenido: "Mecánica clásica",
-        fecha: new Date('2024-10-02T08:00:00')
+        fecha: new Date('2024-10-02T08:00:00'),
+        hora: "10:00"
       }
     ]
   },
@@ -35,17 +39,20 @@ export const usuariosSimulados: Usuario[] = [
       {
         nombre: "Ciencias",
         contenido: "Física y Química",
-        fecha: new Date('2024-09-29T09:00:00')
+        fecha: new Date('2024-09-29'),
+        hora: "10:00"
       },
       {
         nombre: "Literatura",
         contenido: "Realismo y Naturalismo",
-        fecha: new Date('2024-10-02T11:00:00')
+        fecha: new Date('2024-10-02'),
+        hora: "14:00"
       },
       {
         nombre: "Biología",
         contenido: "Evolución y genética",
-        fecha: new Date('2024-10-03T13:00:00')
+        fecha: new Date('2024-10-03T13:00:00'),
+        hora: "10:00"
       }
     ]
   },
@@ -59,17 +66,20 @@ export const usuariosSimulados: Usuario[] = [
       {
         nombre: "Inglés",
         contenido: "Tiempos verbales y vocabulario",
-        fecha: new Date('2024-09-28T08:30:00')
+        fecha: new Date('2024-09-28T08:30:00'),
+        hora: "10:00"
       },
       {
         nombre: "Arte",
         contenido: "Historia del arte renacentista",
-        fecha: new Date('2024-09-29T15:00:00')
+        fecha: new Date('2024-09-29T15:00:00'),
+        hora: "10:00"
       },
       {
         nombre: "Matemáticas",
         contenido: "Cálculo diferencial",
-        fecha: new Date('2024-10-04T09:30:00')
+        fecha: new Date('2024-10-04T09:30:00'),
+        hora: "10:00"
       }
     ]
   }
