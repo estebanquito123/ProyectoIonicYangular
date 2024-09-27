@@ -4,46 +4,36 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class AuthService {
-  private isAuthenticated = false;
-  private userRole: 'docente' | 'alumno' | null = null;
-  private userName: string | null = null;
+  private USERS = [
+    { username: 'user1', password: 'password1' },
+    { username: 'user2', password: 'password2' }
+  ];
 
-  constructor() {}
+  constructor() { }
 
-  // Simula el proceso de autenticación
   login(username: string, password: string): boolean {
-    if (username === 'docente' && password === '1234') {
-      this.isAuthenticated = true;
-      this.userRole = 'docente';
-      this.userName = 'Profesor Ejemplo';
-      return true;
-    } else if (username === 'alumno' && password === '1234') {
-      this.isAuthenticated = true;
-      this.userRole = 'alumno';
-      this.userName = 'Estudiante Ejemplo';
+    const user = this.USERS.find(u => u.username === username && u.password === password);
+    if (user) {
+      localStorage.setItem('loggedInUser', JSON.stringify(user));
       return true;
     }
     return false;
   }
 
-  logout() {
-    this.isAuthenticated = false;
-    this.userRole = null;
-    this.userName = null;
+  logout(): void {
+    localStorage.removeItem('loggedInUser');
   }
 
   isLoggedIn(): boolean {
-    return this.isAuthenticated;
+    return localStorage.getItem('loggedInUser') !== null;
   }
 
-  getUserRole(): 'docente' | 'alumno' | null {
-    return this.userRole;
+  getLoggedInUser() {
+    return JSON.parse(localStorage.getItem('loggedInUser')!);
   }
-
-  getUserName(): string | null {
-    return this.userName;
+  isUserValid(username: string): boolean {
+    return this.USERS.some(user => user.username === username);
   }
 }
-
 
 

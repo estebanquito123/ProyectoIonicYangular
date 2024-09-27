@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
+import { AuthService } from 'src/app/servicios/auth.service';
 import { Router } from '@angular/router';
-import { AuthService } from 'src/app/servicios/auth.service'; // Importa el servicio
 
 @Component({
   selector: 'app-login',
@@ -10,29 +10,16 @@ import { AuthService } from 'src/app/servicios/auth.service'; // Importa el serv
 export class LoginComponent {
   username: string = '';
   password: string = '';
-  loginError: string = '';
+  loginError: boolean = false;
 
   constructor(private authService: AuthService, private router: Router) {}
 
-  onLogin() {
-    const success = this.authService.login(this.username, this.password);
-
-    if (success) {
-      const userRole = this.authService.getUserRole();
-
-      if (userRole === 'docente') {
-        this.router.navigate(['/docente']);
-      } else if (userRole === 'alumno') {
-        this.router.navigate(['/alumno']);
-      }
+  login() {
+    const isLoggedIn = this.authService.login(this.username, this.password);
+    if (isLoggedIn) {
+      this.router.navigate(['/home']); // Navega a la página de inicio o componente protegido
     } else {
-      this.loginError = 'Usuario o contraseña incorrectos';
+      this.loginError = true; // Muestra un mensaje de error si las credenciales son incorrectas
     }
   }
-
-  onForgotPassword() {
-    this.router.navigate(['/reset-password']);
-  }
 }
-
-
