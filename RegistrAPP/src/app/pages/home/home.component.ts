@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/servicios/auth.service';
 import { Asignatura, Usuario } from 'src/app/models/bd.models';
 import { usuariosSimulados } from 'src/app/models/data.models';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -12,6 +13,8 @@ export class HomeComponent implements OnInit {
   asignaturas: Asignatura[] = [];  // Asignaturas del usuario
   nombreUsuario: string = '';      // Nombre del usuario logueado
   rolUsuario: string = '';         // Rol del usuario logueado (docente/alumno)
+
+  private router= inject(Router)
 
   constructor(private authService: AuthService) {}
 
@@ -34,9 +37,7 @@ export class HomeComponent implements OnInit {
   }
 
   verDetalles(asignatura: Asignatura) {
-    // Lógica para navegar a los detalles de la asignatura
-    // this.router.navigate(['/detalles-asignatura', asignatura.nombre]);
-    console.log('Navegar a detalles de la asignatura:', asignatura.nombre);
+    this.router.navigate(['/detalles-asignatura/', asignatura.nombre]);
   }
 }
 

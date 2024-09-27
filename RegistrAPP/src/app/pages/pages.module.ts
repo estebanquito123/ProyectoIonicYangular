@@ -9,6 +9,7 @@ import { SharedModule } from '../shared/shared.module';
 import { IonicModule } from '@ionic/angular';
 import { FormsModule } from '@angular/forms';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
+import { DetallesAsignaturaComponent } from './detalles-asignatura/detalles-asignatura.component';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { ResetPasswordComponent } from './reset-password/reset-password.componen
     HomeComponent,
     LoginComponent,
     LogoutComponent,
-    ResetPasswordComponent
+    ResetPasswordComponent,
+    DetallesAsignaturaComponent
   ],
   imports: [
     CommonModule,
