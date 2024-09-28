@@ -20,7 +20,6 @@ export class ResetPasswordComponent {
     } else {
       this.mensaje = 'Enlace de recuperación de contraseña enviado a su correo.'; // Mensaje de éxito
       this.correo = ''; // Limpiar el campo de correo
-      this.router.navigate(['login']);
     }
   }
 }
