@@ -8,11 +8,10 @@ import { DetallesAsignaturaComponent } from './detalles-asignatura/detalles-asig
 
 
 const routes: Routes = [
-  {path:'', component: HomeComponent},
   {path:'home', component: HomeComponent},
-  {path: 'login', component: LoginComponent},
+  {path: '', component: LoginComponent},
   {path: 'logout', component: LogoutComponent},
-  {path: 'login/resetPassword', component: ResetPasswordComponent},
+  {path: 'resetPassword', component: ResetPasswordComponent},
   {path: 'detalles-asignatura/:nombre', component: DetallesAsignaturaComponent}
 ];
 

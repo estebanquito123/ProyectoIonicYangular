@@ -29,7 +29,9 @@
     <!-- Opciones para el alumno -->
     <div *ngIf="rolUsuario === 'alumno'" class="acciones-alumno">
       <button (click)="escanearCodigoQR()">Escanear Código QR</button>
-      <p>Escanea el código QR proporcionado por tu profesor para registrar tu asistencia.</p>
+      <div *ngIf="codigoQREscaneado">
+        <p>Escaneando codigo QR...</p>
+      </div>
     </div>
   </div>
 </div>

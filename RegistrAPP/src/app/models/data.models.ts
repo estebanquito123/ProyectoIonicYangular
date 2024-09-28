@@ -3,42 +3,42 @@ import { Usuario } from "./bd.models"; // Importar la interface de usuario
 export const usuariosSimulados: Usuario[] = [
   {
     id: 1,
-    nombreCompleto: "Juan Pérez",
+    nombreCompleto: "Esteban",
     usuario: "alumno",
     clave: "1234",
     rol: 'alumno',  // Juan Pérez es un alumno
     asignaturas: [
       {
         nombre: "Matemáticas",
-        contenido: "Álgebra y geometría",
-        fecha: new Date('2024-09-30T10:00:00'),
-        hora: "10:00"
+        contenido: "Algebra y geometria",
+        fecha: new Date('2024-09-30'),
+        hora: "11:00"
       },
       {
         nombre: "Historia",
-        contenido: "Revolución Francesa",
-        fecha: new Date('2024-10-01T14:00:00'),
-        hora: "10:00"
+        contenido: "Revolucion Francesa",
+        fecha: new Date('2024-10-01'),
+        hora: "12:00"
 
       },
       {
-        nombre: "Física",
-        contenido: "Mecánica clásica",
+        nombre: "Fisica",
+        contenido: "Leyes de Newton",
         fecha: new Date('2024-10-02T08:00:00'),
-        hora: "10:00"
+        hora: "13:00"
       }
     ]
   },
   {
     id: 2,
-    nombreCompleto: "María González",
+    nombreCompleto: "Helton",
     usuario: "docente",
     clave: "1234",
     rol: 'docente',  // María González es docente
     asignaturas: [
       {
         nombre: "Ciencias",
-        contenido: "Física y Química",
+        contenido: "Fisica y Quimica",
         fecha: new Date('2024-09-29'),
         hora: "10:00"
       },
@@ -49,22 +49,22 @@ export const usuariosSimulados: Usuario[] = [
         hora: "14:00"
       },
       {
-        nombre: "Biología",
+        nombre: "Biologia",
         contenido: "Evolución y genética",
         fecha: new Date('2024-10-03T13:00:00'),
-        hora: "10:00"
+        hora: "15:00"
       }
     ]
   },
   {
     id: 3,
-    nombreCompleto: "Carlos Ramírez",
+    nombreCompleto: "Carlos Ramirez",
     usuario: "cramirez",
     clave: "987654",
     rol: 'alumno',  // Carlos Ramírez es un alumno
     asignaturas: [
       {
-        nombre: "Inglés",
+        nombre: "Ingles",
         contenido: "Tiempos verbales y vocabulario",
         fecha: new Date('2024-09-28T08:30:00'),
         hora: "10:00"
@@ -73,13 +73,13 @@ export const usuariosSimulados: Usuario[] = [
         nombre: "Arte",
         contenido: "Historia del arte renacentista",
         fecha: new Date('2024-09-29T15:00:00'),
-        hora: "10:00"
+        hora: "12:00"
       },
       {
-        nombre: "Matemáticas",
+        nombre: "Matematicas",
         contenido: "Cálculo diferencial",
-        fecha: new Date('2024-10-04T09:30:00'),
-        hora: "10:00"
+        fecha: new Date('2024-10-04'),
+        hora: "14:00"
       }
     ]
   }

@@ -4,6 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 import { AuthService } from 'src/app/servicios/auth.service';
 import { usuariosSimulados } from 'src/app/models/data.models';
 
+
 @Component({
   selector: 'app-detalles-asignatura',
   templateUrl: './detalles-asignatura.component.html',
@@ -13,6 +14,7 @@ export class DetallesAsignaturaComponent implements OnInit {
   asignatura: Asignatura | undefined;
   rolUsuario: string = '';  // Rol del usuario autenticado
   codigoQRGenerado: boolean = false;  // Para saber si el docente ha generado el QR
+  codigoQREscaneado: boolean = false;
 
   constructor(private route: ActivatedRoute, private authService: AuthService) {}
 
@@ -35,14 +37,13 @@ export class DetallesAsignaturaComponent implements OnInit {
   }
 
   generarCodigoQR() {
-    // Lógica para generar el código QR (puedes usar una librería de generación de QR como ngx-qrcode2)
     console.log('Generar código QR para la asistencia');
     this.codigoQRGenerado = true;  // Indicar que el QR ha sido generado
   }
 
   escanearCodigoQR() {
-    // Lógica para escanear el código QR (puedes usar la API de la cámara o una librería de escaneo QR)
     console.log('Escanear código QR para registrar asistencia');
+    this.codigoQREscaneado = true;
   }
 }
 

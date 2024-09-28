@@ -1,6 +1,6 @@
 <ion-content>
   <app-header></app-header>
-  <p>login works!</p>
+  <p>Debe iniciar sesion para utilizar la app</p>
   <ion-item>
     <ion-label position="floating">Usuario</ion-label>
     <ion-input [(ngModel)]="usuario"></ion-input>
@@ -14,7 +14,7 @@
   <ion-text color="danger" *ngIf="loginFailed">
     Usuario o clave incorrectos.
   </ion-text>
-    <p><a [routerLink]="['/login/resetPassword']" >¿Olvidaste tu contraseña? Haz click aqui</a></p>
+    <p><a [routerLink]="['/resetPassword']" >¿Olvidaste tu contraseña? Haz click aqui</a></p>
 </ion-content>
 <app-footer></app-footer>
 
