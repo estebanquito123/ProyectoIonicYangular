@@ -10,6 +10,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
+  usuario:string='';
   asignaturas: Asignatura[] = [];  // Asignaturas del usuario
   nombreUsuario: string = '';      // Nombre del usuario logueado
   rolUsuario: string = '';         // Rol del usuario logueado (docente/alumno)
@@ -19,6 +20,7 @@ export class HomeComponent implements OnInit {
   constructor(private authService: AuthService) {}
 
   ngOnInit(): void {
+
     // Obtener el nombre del usuario autenticado
     this.authService.usuario$.subscribe(nombre => {
       this.nombreUsuario = nombre;

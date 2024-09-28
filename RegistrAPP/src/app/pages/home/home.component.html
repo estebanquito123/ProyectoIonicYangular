@@ -1,14 +1,24 @@
 <app-header></app-header>
-<div>
-  <h1>Bienvenido, {{ nombreUsuario }}</h1>
+<ion-content>
+  <ion-list>
+      <ion-title>Tus asignaturas</ion-title>
+      <div *ngIf="rolUsuario === 'docente'">
+        <p>Aquí puede ver el horario de las asignaturas a las que usted realiza clases:</p>
+      </div>
+      <div *ngIf="rolUsuario === 'alumno'">
+        <p>Aquí puede ver el horario de las asignaturas a las que está inscrito:</p>
+      </div>
+    <!-- Iterar sobre las asignaturas -->
+    <ion-item *ngFor="let asignatura of asignaturas">
+      <!-- Nombre de la asignatura -->
+      <ion-label>{{ asignatura.nombre }}</ion-label>
 
-  <!-- Mostrar las asignaturas del usuario -->
-  <h2>Tus asignaturas ({{ rolUsuario }}):</h2>
-  <ul>
-    <li *ngFor="let asignatura of asignaturas">
-      <ion-button (click)="verDetalles(asignatura)">{{ asignatura.nombre }}</ion-button>
-    </li>
-  </ul>
-</div>
+      <!-- Botón para ver detalles de la asignatura -->
+      <ion-button (click)="verDetalles(asignatura)">
+        Ver Detalles
+      </ion-button>
+    </ion-item>
+  </ion-list>
+</ion-content>
 <app-footer></app-footer>
 
