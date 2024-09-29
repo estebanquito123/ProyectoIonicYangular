@@ -3,6 +3,7 @@ h2 {
   font-size: 2.5rem; /* Aumentado */
   color: #2c3e50;
   text-align: center;
+  margin-bottom: 80px;
 }
 
 p {
@@ -17,9 +18,10 @@ p {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  min-height: calc(90vh - 200px); /* Ajustado para subir un poco el contenido */
+  min-height: calc(90vh - 250px); /* Ajustado para subir un poco el contenido */
   padding: 2rem;
-  margin-bottom: 30px;
+  margin-bottom: 230px;
+  margin-top: 25px;
 }
 
 /* Tabla de detalles de la asignatura */
@@ -52,6 +54,7 @@ p {
 
 /* Botón general */
 button {
+  margin-top: 100px;
   background-color: #3498db;
   color: white;
   padding: 1rem 2rem; /* Aumentado */
@@ -82,22 +85,14 @@ button:hover {
   color: #e67e22;
 }
 
-/* Estilos para el footer y el header */
-app-header, app-footer {
-  background-color: #000;
-  color: #fff;
-  padding: 1rem 0;
-  text-align: center;
+body {
+  background-color: #fff9e6 !important; /* Color amarillo suave */
+  margin: 0; /* Asegúrate de que no haya margen extra */
+  padding: 0;
+  height: 100%;
+  width: 100%;
 }
 
-app-header {
-  font-size: 1.5rem;
-  font-weight: bold;
-}
-
-app-footer {
-  font-size: 1rem;
-}
 
 
 
