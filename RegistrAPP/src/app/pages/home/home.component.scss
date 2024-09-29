@@ -33,16 +33,20 @@ ion-content {
   background-color: white; /* Color amarillo suave */
 }
 
-.tabla-asignaturas th, .tabla-asignaturas td {
+.tabla-asignaturas td {
   padding: 12px;
   text-align: left;
   border-bottom: 1px solid black;
+  color: black;
 }
 
 .tabla-asignaturas th {
   background-color: #333;
   color: white;
   text-align: center;
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid black;
 }
 
 .tabla-asignaturas td {
